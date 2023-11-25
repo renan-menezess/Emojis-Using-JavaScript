@@ -42,5 +42,17 @@ function handleClick() {
 }
 
 function checkMatch() {
-    
+    if(openCards[0].innerHTML === openCards[1].innerHTML) {
+        openCards[0].classList.add("boxMatch");
+        openCards[0].classList.add("boxMatch");
+    } else {
+        openCards[0].classList.remove("boxMatch");
+        openCards[1].classList.remove("boxMatch");
+    }
+
+    openCards = [];
+
+    if(document.querySelectorAll(".boxMatch").length === emojis.length) {
+        alert("Você Venceu !");
+    }
 }
